@@ -98,7 +98,7 @@ function MaterialBottomTabViewInner({
   ...rest
 }: Props) {
   const insets = useSafeAreaInsets();
-  const { dark, colors } = useTheme();
+  const { colors } = useTheme();
   const paperTheme = usePaperTheme();
 
   const buildLink = useLinkBuilder();
@@ -106,7 +106,7 @@ function MaterialBottomTabViewInner({
   const t =
     // If the theme from React Navigation and Paper match, then user the customized theme
     // Otherwise fallback to the matching default theme from Paper
-    dark === paperTheme.dark ? paperTheme : dark ? DarkTheme : DefaultTheme;
+   paperTheme
 
   const theme = React.useMemo(() => {
     return {
